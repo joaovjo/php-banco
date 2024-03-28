@@ -1,11 +1,10 @@
-# Nome do Projeto
+# PHP-Banco (Estudo)
 
-Descrição breve do projeto.
+A aplicação funciona em CLI, cria e acessa contas de banco
 
 ## Pré-requisitos
 
-- PHP (versão X.X.X)
-- Outras dependências...
+- PHP 8.x
 
 ## Instalação
 

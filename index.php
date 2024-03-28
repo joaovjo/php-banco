@@ -33,7 +33,7 @@ $entrada = readline("Digite o número referente a conta desejada: ");
 
 switch ($entrada) {
     case 1:
-        receberDadosContaCorrente();
+        $ContaCorrente = new receberDadosContaCorrente();
         break;
     case 2:
         $nomeBanco = readline("Digite o nome do banco: ");
