@@ -7,6 +7,7 @@ require_once 'vendor/autoload.php';
 use App\Contas\ContasTipo\ContaCorrente;
 use App\Contas\ContasTipo\ContaPoupanca;
 use App\Operacao\Acessar;
+use App\Operacao\Criacao;
 
 do {
 
@@ -23,28 +24,10 @@ do {
 
     switch ($entrada) {
         case 1:
-            $entradaConta = readline("Qual tipo de conta deseja criar?\n1 - Conta Corrente\n2 - Conta Poupança\n");
-
-            if ($entradaConta == 1) {
-                $nomeBanco = readline("Digite o nome do banco: ");
-                $nomeTitular = readline("Digite o nome do titular da conta: ");
-                $numeroAgencia = readline("Digite o número da agência da conta: ");
-                $numeroConta = readline("Digite o número da conta: ");
-                $saldoConta = (float) readline("Digite o saldo inicial da conta: ");
-                $contaCorrente = new ContaCorrente($nomeBanco, $nomeTitular, $numeroAgencia, $numeroConta, $saldoConta);
-                echo "\nConta criada com sucesso!\n";
-                return $contaCorrente;
-            } else {
-                $nomeBanco = readline("Digite o nome do banco: ");
-                $nomeTitular = readline("Digite o nome do titular da conta: ");
-                $numeroAgencia = readline("Digite o número da agência da conta: ");
-                $numeroConta = readline("Digite o número da conta: ");
-                $saldoConta = (float) readline("Digite o saldo inicial da conta: ");
-                $contaPoupanca = new ContaPoupanca($nomeBanco, $nomeTitular, $numeroAgencia, $numeroConta, $saldoConta);
-                echo "\nConta criada com sucesso!\n";
-                return $contaPoupanca;
-            }
-            //break;
+            echo "Criar conta.\n";
+            $criacao = new Criacao();
+            $criacao->criarConta();
+            break;
 
         case 2:
             echo "Acessar dados da conta.\n";

@@ -6,7 +6,7 @@ namespace App\Operacao;
 
 use App\Contas\ContaBancaria;
 
-class Acessar extends ContaBancaria
+class Acesso extends ContaBancaria
 {
     public function exibirDadosConta(): void
     {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Contas;
 
-abstract class ContaBancaria
+class ContaBancaria
 {
     protected string $nomeBanco;
     protected string $nomeTitular;
