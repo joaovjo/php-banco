@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 require_once 'vendor/autoload.php';
 
-use App\Operacoes;
-use App\Operacoes\CriarConta\CriarContaCorrente;
-use App\Operacoes\CriarConta\CriarContaPoupanca;
 use App\Contas\ContasTipo\ContaCorrente;
 use App\Contas\ContasTipo\ContaPoupanca;
 
@@ -14,34 +11,40 @@ echo "Olá, seja bem-vindo ao sistema de conta bancária!\n\n";
 echo "Qual ação deseja realizar?\n";
 echo "
     1 - Criar conta.
-    2 - Acessar conta existente.";
+    2 - Acessar dados da conta.\n";
 
-//$entrada = readline("Digite o número referente a ação desejada: ");
+$conta = "";
+$entrada = readline("Digite o número referente a ação desejada: ");
 
-// if($entrada == 1) {
-//     CriarConta();
-// } else {
-//     AcessarConta();
-// }
+if ($entrada == 1) {
 
-echo "Escolha o tipo de conta que deseja criar:\n";
-echo "
-    1 - Conta Corrente.
-    2 - Conta Poupança.";
+    $entradaConta = readline("Qual tipo de conta deseja criar?\n1 - Conta Corrente\n2 - Conta Poupança\n");
 
-$entrada = readline("Digite o número referente a conta desejada: ");
-
-switch ($entrada) {
-    case 1:
-        $ContaCorrente = new receberDadosContaCorrente();
-        break;
-    case 2:
-        $nomeBanco = readline("Digite o nome do banco: ");
-        $nomeTitular = readline("Digite o nome do titular da conta poupança: ");
-        $numeroAgencia = readline("Digite o número da agência da conta poupança: ");
-        $numeroConta = readline("Digite o número da conta poupança: ");
-        $saldoConta = (float) readline("Digite o saldo inicial da conta poupança: ");
-        $contaPoupanca = new ContaPoupanca($nomeBanco, $nomeTitular, $numeroAgencia, $numeroConta, $saldoConta);
-        echo "\nConta poupança criada com sucesso!\n";
-        break;
+    if ($entradaConta == 1) {
+            $nomeBanco = readline("Digite o nome do banco: ");
+            $nomeTitular = readline("Digite o nome do titular da conta: ");
+            $numeroAgencia = readline("Digite o número da agência da conta: ");
+            $numeroConta = readline("Digite o número da conta: ");
+            $saldoConta = (float) readline("Digite o saldo inicial da conta: ");
+            $contaCorrente = new ContaCorrente($nomeBanco, $nomeTitular, $numeroAgencia, $numeroConta, $saldoConta);
+            echo "\nConta criada com sucesso!\n";
+            return $conta;
+        } else {
+            $nomeBanco = readline("Digite o nome do banco: ");
+            $nomeTitular = readline("Digite o nome do titular da conta: ");
+            $numeroAgencia = readline("Digite o número da agência da conta: ");
+            $numeroConta = readline("Digite o número da conta: ");
+            $saldoConta = (float) readline("Digite o saldo inicial da conta: ");
+            $contaPoupanca = new ContaPoupanca($nomeBanco, $nomeTitular, $numeroAgencia, $numeroConta, $saldoConta);
+            echo "\nConta criada com sucesso!\n";
+            return $conta;
+        }
+// Remove the unreachable code
+// return $conta;
+} elseif ($entrada == 2) {
+    $conta = $contaBancaria->exibirDadosConta();
+    echo $conta;
+    return $conta;
+} else {
+    echo "Opção inválida!";
 }
