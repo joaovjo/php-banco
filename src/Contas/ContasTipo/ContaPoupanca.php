@@ -9,7 +9,7 @@ use App\Contas\ContaBancaria;
 class ContaPoupanca extends ContaBancaria
 {
 
-    public const RENDIMENTO = 0.05;
+    public const RENDIMENTO = 0.3;
     public const TIPO_CONTA = 'Conta Poupança';
 
     public function __construct(string $nomeBanco, string $nomeTitular, string $numeroAgencia, string $numeroConta, float $saldoConta)

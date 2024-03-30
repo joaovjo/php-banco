@@ -9,7 +9,7 @@ use App\Contas\ContaBancaria;
 class ContaCorrente extends ContaBancaria
 {
 
-    public const TARIFA_SAQUE = 0.03;
+    public const TARIFA_SAQUE = 0.5;
     public const TIPO_CONTA = 'Conta Corrente';
 
     public function __construct(string $nomeBanco, string $nomeTitular, string $numeroAgencia, string $numeroConta, float $saldoConta)
