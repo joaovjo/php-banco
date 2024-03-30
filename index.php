@@ -52,7 +52,14 @@ do {
             //$conta = $contaBancaria->exibirDadosConta();
             echo $conta;
             break;
-
+        
+        case 3:
+            echo "Depositar.\n";
+            break;
+        
+        case 4:
+            echo "Sacar.\n";
+            break;
         default:
             echo "Opção inválida!";
             break;
