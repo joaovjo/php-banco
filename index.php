@@ -10,7 +10,6 @@ use App\Operacao\Acessar;
 use App\Operacao\Criacao;
 
 do {
-
     echo "Olá, seja bem-vindo ao sistema de conta bancária!\n\n";
     echo "Qual ação deseja realizar?\n";
     echo "
@@ -35,19 +34,18 @@ do {
             //$conta = $contaBancaria->exibirDadosConta();
             echo $conta;
             break;
-        
+
         case 3:
             echo "Depositar.\n";
             break;
-        
+
         case 4:
             echo "Sacar.\n";
             break;
         default:
-            echo "Opção inválida!";
+            echo 'Opção inválida!';
             break;
     }
-
 } while ($entrada != 0);
 
 echo "\nObrigado por utilizar o sistema de conta bancária!";

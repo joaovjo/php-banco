@@ -17,7 +17,7 @@ class ContaBancaria
         string $nomeTitular,
         string $numeroAgencia,
         string $numeroConta,
-        float $saldoConta
+        float $saldoConta,
     ) {
         $this->nomeBanco = $nomeBanco;
         $this->nomeTitular = $nomeTitular;
@@ -26,8 +26,7 @@ class ContaBancaria
         $this->saldoConta = $saldoConta;
     }
 
-
-//    public abstract function obterSaldo(): string;
+    //    public abstract function obterSaldo(): string;
 
     public function getNomeBanco(): string
     {

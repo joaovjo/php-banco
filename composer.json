@@ -13,5 +13,12 @@
             "email": "joao-j-v@hotmail.com"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "carthage-software/mago": "1.0.0-beta.34"
+    },
+    "config": {
+        "allow-plugins": {
+            "carthage-software/mago": true
+        }
+    }
 }
